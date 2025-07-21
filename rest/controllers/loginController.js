@@ -7,7 +7,7 @@ async function login(req, res, next) {
     try {
         const usuario = await authService.autenticarUsuario(username, senha);
         const token = authService.gerarToken(usuario);
-
+        //console.log(token);
         res.json({ token });
     } catch (error) {
         next(error);
