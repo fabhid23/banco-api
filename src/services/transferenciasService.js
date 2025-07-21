@@ -18,7 +18,7 @@ async function realizarTransferencia(contaOrigem, contaDestino, valor, token) {
         throw createError(422, 'Conta de origem ou destino está inativa.');
     }
 
-    if (parseFloat(contaOrigemData.saldo) < parseFloat(valor)) {
+    if (parseFloat(parseFloat(contaOrigemData.saldo)) < parseFloat(parseFloat(valor))) {
         console.log(contaOrigemData.saldo, valor)
         throw createError(422, 'Saldo insuficiente para realizar a transferência.');
     }
